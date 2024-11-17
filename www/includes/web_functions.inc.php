@@ -546,9 +546,10 @@ EoRenderCNJS;
 
 ######################################################
 
-function render_js_email_generator($username_field_id,$email_field_id) {
+function render_js_email_generator($firstname_field_id,$email_field_id) {
 
  global $EMAIL_DOMAIN;
+ global $MAIL_PREFIX;
 
   print <<<EoRenderEmailJS
 <script>
@@ -558,8 +559,8 @@ function render_js_email_generator($username_field_id,$email_field_id) {
  function update_email() {
 
   if ( auto_email_update == true && "$EMAIL_DOMAIN" != ""  ) {
-    var username = document.getElementById('$username_field_id').value;
-    document.getElementById('$email_field_id').value = $MAIL_PREFIX + username + '@' + "$EMAIL_DOMAIN";
+    var username = document.getElementById('$firstname_field_id').value;
+    document.getElementById('$email_field_id').value = "$MAIL_PREFIX" + $firstname_field_id + '@' + "$EMAIL_DOMAIN";
   }
 
  }
@@ -572,8 +573,9 @@ EoRenderEmailJS;
 
 ######################################################
 
-function render_js_homedir_generator($username_field_id,$homedir_field_id) {
+function render_js_homedir_generator($firstname_field_id,$homedir_field_id) {
 
+ global $HOME_PREFIX;
   print <<<EoRenderHomedirJS
 <script>
 
@@ -582,8 +584,8 @@ function render_js_homedir_generator($username_field_id,$homedir_field_id) {
  function update_homedir() {
 
   if ( auto_homedir_update == true ) {
-    var username = document.getElementById('$username_field_id').value;
-    document.getElementById('$homedir_field_id').value = $HOME_PREFIX + username;
+    var username = document.getElementById('$firstname_field_id').value;
+    document.getElementById('$homedir_field_id').value = "$HOME_PREFIX" + $firstname_field_id;
   }
 
  }
