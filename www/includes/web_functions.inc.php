@@ -559,7 +559,7 @@ function render_js_email_generator($username_field_id,$email_field_id) {
 
   if ( auto_email_update == true && "$EMAIL_DOMAIN" != ""  ) {
     var username = document.getElementById('$username_field_id').value;
-    document.getElementById('$email_field_id').value = username + '@' + "$EMAIL_DOMAIN";
+    document.getElementById('$email_field_id').value = $MAIL_PREFIX + username + '@' + "$EMAIL_DOMAIN";
   }
 
  }
@@ -583,7 +583,7 @@ function render_js_homedir_generator($username_field_id,$homedir_field_id) {
 
   if ( auto_homedir_update == true ) {
     var username = document.getElementById('$username_field_id').value;
-    document.getElementById('$homedir_field_id').value = "/home/" + username;
+    document.getElementById('$homedir_field_id').value = $HOME_PREFIX + username;
   }
 
  }
