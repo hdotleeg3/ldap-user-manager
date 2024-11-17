@@ -863,7 +863,7 @@ function ldap_new_account($ldap_connection,$account_r) {
      }
 
      if (empty($account_attributes['loginshell']))    { $account_attributes['loginshell']    = $DEFAULT_USER_SHELL; }
-     if (empty($account_attributes['homedirectory'])) { $account_attributes['homedirectory'] = "/home/" . $account_r['uid'][0]; }
+     if (empty($account_attributes['homedirectory'])) { $account_attributes['homedirectory'] = $HOME_PREFIX. "/" . $account_r['uid'][0]; }
 
      $add_account = @ ldap_add($ldap_connection,
                                "{$LDAP['account_attribute']}=$account_identifier,{$LDAP['user_dn']}",
