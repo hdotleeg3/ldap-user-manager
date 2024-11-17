@@ -281,8 +281,8 @@ if ($errors != "") { ?>
 render_js_username_check();
 render_js_username_generator('givenname','sn','uid','uid_div');
 render_js_cn_generator('givenname','sn','cn','cn_div');
-render_js_email_generator('uid','mail');
-render_js_homedir_generator('uid','homedirectory');
+render_js_email_generator('givenname','mail');
+render_js_homedir_generator('givenname','homedirectory');
 
 $tabindex=1;
 
