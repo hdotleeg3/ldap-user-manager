@@ -15,6 +15,9 @@ env_file_replace() {
   done
 }
 
+if [ ! "$MAIL_PREFIX" ]; then export MAIL_PREFIX=""; fi
+if [ ! "$HOME_PREFIX" ]; then export HOME_PREFIX="/home"; fi
+
 if [ ! "$SERVER_HOSTNAME" ]; then export SERVER_HOSTNAME="ldapusermanager.org"; fi
 if [ ! "$SERVER_PATH" ]; then
   export SERVER_PATH="/";
