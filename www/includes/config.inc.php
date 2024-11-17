@@ -26,21 +26,21 @@
  $LDAP['account_objectclasses'] = array( 'person', 'inetOrgPerson', 'posixAccount' );
  $LDAP['default_attribute_map'] = array(
     "givenname" => array(
-        "label" => "First name",
+        "label" => "Employee ID",
         "onkeyup" => "update_username(); update_email(); update_cn(); update_homedir(); check_email_validity(document.getElementById('mail').value);",
         "required" => TRUE,
     ),
     "sn" => array(
-        "label" => "Last name",
+        "label" => "Name",
         "onkeyup" => "update_username(); update_email(); update_cn(); update_homedir(); check_email_validity(document.getElementById('mail').value);",
         "required" => TRUE,
     ),
     "uid" => array(
-        "label" => "System username",
+        "label" => "OS ID",
         "onkeyup" => "check_entity_name_validity(document.getElementById('uid').value,'uid_div'); update_email(); update_homedir(); check_email_validity(document.getElementById('mail').value);",
     ),
     "cn" => array(
-        "label" => "Common name",
+        "label" => "Comment",
         "onkeyup" => "auto_cn_update = false;",
     ),
     "mail" => array(
